@@ -1,0 +1,15 @@
+9.
+b) Ao executar o comando CTRL + C é enviado o sinal SIGINT, que cancela ou finaliza o programa em execução no momento.
+
+d) Ao executar o comando CTRL + \ é enviado o sinal SIGQUIT, que é semelhante ao SIGINT, mas produz um core dump (despejo da memória principal).
+
+f) O programa deu print a "I won’t let the process end with CTRL-C!" no caso de SIGINT.
+
+g) O programa deu print a "I won’t let the process end by pressing CTRL-\!" no caso de SIGQUIT.
+
+h) PID: 540640 
+   Estado: T (Parado)
+
+   Número do job: [1]
+
+   O comando kill %1 tem como significado matar o job número 1.

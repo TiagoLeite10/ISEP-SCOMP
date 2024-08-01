@@ -1,0 +1,12 @@
+1.
+a) Imagem com a árvore de processos.
+
+O output consitirá em:
+2. x = 0
+3. 1234; x = 0
+1. x = 2
+3. 0; x = 2
+
+Não necessariamente por esta ordem, pois não sabemos que processo irá executado em primeiro lugar.
+
+b) Não, pois não sabemos quem será executado primeiro devido a depender da seleção do escalamento efetuado pelo processador.

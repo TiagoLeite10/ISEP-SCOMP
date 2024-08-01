@@ -1,0 +1,8 @@
+Isto é um ficheiro de texto para testar o exercício!
+Estas frases devem todas ser colocados no ecrã.
+
+Se está a ler isto é porque tudo está a correr como esperado!
+
+Teste efetuado com sucesso!! Este documento não tem mais conteúdo, a seguir ao próximo ponto final!
+Fim.
+

@@ -1,0 +1,7 @@
+Não é necessário um mecanismo de sincronização entre a leitura e escrita de um pipe, porque
+o pipe garante uma sincronização em que a leitura fica sempre à espera que algo seja escrito
+no pipe, sendo que a leitura é apenas realizada quando algo é escrito no pipe. Também é garantido
+que se algo não for escrito no pipe mas outro processo estiver à espera de ler do pipe, ao realizar
+o close da escrita no primeiro processo, o segundo processo vai deixar de estar bloqueado à espera de ler, 
+porque a instrução de leitura deixa de esperar que algo seja escrito no pipe. Desta forma, a instrução de 
+leitura vai devolver o valor 0 para informar que nada foi lido do pipe.

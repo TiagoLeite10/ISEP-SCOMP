@@ -1,0 +1,6 @@
+6) Não é seguro utilizar variáveis globais ou estáticas dentro de um handler de sinais. Devemos 
+utilizar antes uma variável do tipo "volatile sig_atomic" porque "bloqueia" a chegada de outros 
+sinais diferentes antes de interromper a execução desta função handler. Isto é, desta forma garantimos 
+que a leitura e escrita na variável é feita apenas com uma instrução assembly e que o compilador não 
+irá tentar realizar otimizações nesse sentido de leitura e escrita na variável. Assim garantimos também
+que um handler não é executado "a meio" de um acesso.

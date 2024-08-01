@@ -1,0 +1,30 @@
+8
+
+a)
+Os processos listados são o pai e apenas um dos dois filhos criados.
+O processo listado é chamado de processo "zombie", pois ele terminou antes do processo pai, 
+mas torna-se necessário armazenar informação sobre a forma como o filho terminou, 
+apesar que o sistema operativo liberta todos os restantes recursos detidos por este processo.
+Em relação ao outro filho, ele não se encontra nesta mesma tabela de processos devido a que o 
+processo pai invocou a função waitpid para esperar que o processo filho terminasse e que a entrada 
+na tabela de processos desaparecesse.
+Pelo print com o nome "ex08_a" presente nesta pasta, podemos observar que o processo pai com o pid 51471 
+continua sempre ativo, enquanto que o processo com o pid 51472 já se encontra como processo zombie 
+(contém uma etiqueta informativa de tal: "<defunct>"). Já o processo 51473 já não se encontra na tabela de 
+processos devido a que o processo pai realizou um waitpid como já falado.
+
+b)
+Sim, como dito anteriormente, o processo filho presente na tabela de processos, é um processo zombie 
+(é possível observar que tem uma etiqueta informativa de tal: "<defunct>"). Este processo continua presente
+na tabela de processos porque, apesar de ter terminado antes do processo pai, o sistema operativo ainda não o pode remover 
+devido a ser necessário armazenar informação sobre a forma como este processo filho terminou. De qualquer das formas, o 
+sistema operativo liberta todos os restantes recursos detidos anteriormente por este processo zombie. Para que a entrada deste 
+processo seja removida da tabela de processos, o processo pai deve invocar a função wait ou waitpid, como por exemplo fez para 
+o processo com o pid 51473 do exercício a.
+
+c)
+Print presente nesta pasta com o nome "ex08_c" em que terminamos o processo pai, eliminado assim também o processo filho da tabela de processos.
+
+Texto:
+kill -kill 51471
+

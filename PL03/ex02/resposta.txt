@@ -1,0 +1,7 @@
+Não, estes resultados não vão estar sempre iguais nem corretos. Isto acontece porque não existe nenhum mecanismo 
+para garantir que um processo executa a soma e a subtração de cada valor presente na memória partilhada até ao fim,
+ou seja, antes que outro processo trate o mesmo valor em memória levando a que um processo reescreva o novo valor colocado
+em memória pelo outro processo.
+
+Solução: Utilizar (nesta fase) a espera ativa nos dois processos.
+

@@ -1,0 +1,6 @@
+3.
+a) São criados 7 processos (excluindo o processo pai).
+
+b) Imagem com a árvore de processos.
+
+c) "SCOMP" é imprimido 8 vezes devido a serem criados 8 processos (incluindo o processo pai), cada processo executa apenas uma vez o "printf("SCOMP!\n")".

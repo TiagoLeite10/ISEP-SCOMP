@@ -1,0 +1,32 @@
+4)
+a) A melhor função para lidar com sinais é a função com o nome sigaction(). Nos sistemas UNIX originais, quando um 
+manipulador estabelecido usando signal() era chamado pela entrega de um sinal, a disposição do sinal era redefinida 
+para SIG_DFL e o sistema não bloqueava a entrega de outras instâncias do sinal. Isto era mau, porque o sinal podia ser 
+entregue novamente antes que o manipulador tivesse a hipótese de se restabelecer. Além disso, entregas rápidas do mesmo 
+sinal podem resultar em invocações recursivas do manipulador.
+Para além disso, o próprio manual presente no linux (obtemos esse manual colocando no terminal o comando "man signal"), 
+faz um aviso para que o uso da função signal() seja evitado, e que seja antes utilizada a função sigaction().
+
+b) A função sigaction(), tem a seguinte declaração: int sigaction(int sig, const struct sigaction *act, struct sigaction *oact);
+Esta função recebe 3 parâmetros diferentes, sendo eles:
+-> int sig - é o número de um sinal reconhecido. A função sigaction() examina e redefine a ação
+associada a este sinal. Existem alguns valores que podem ser passados neste parâmetro, sendo
+estes os seguinte:
+	- SIGINT - Interromper o programa;
+	- SIGILL - Instrução ilegal;
+	- SIGKILL - Terminar o programa (não pode ser ignorado nem redefinido);
+	- SIGSEGV - Violação da segmentação (Acesso ilegal a memória);
+	- SIGALRM - Temporizador em tempo real expirado;
+	- SIGSTOP - Parar a execução do programa, sem o terminar (não pode ser ignorado nem redefinido);
+	- SIGCONT - Continuar a execução do programa após este ter sido parado;
+	- SIGCHLD - O status do processo filho mudou;
+	- SIGUSR1 - Sinal definido pelo utilizador 1;
+	- SIGUSR2 - Sinal definido pelo utilizador 2.
+-> const struct sigaction *act - define os detalhes da ação para a assinatura do sinal. Esta estrutura pode
+diferir ligeiramente entre arquiteturas, mas esses campos devem estar em conformidade com o POSIX.
+	- sa_handler - Apontador para uma função manipuladora ANSI em C;
+	- sa_sigacation - Apontador para uma função manipuladora POSIX em C;
+	- sa_mask - Máscara de sinais a serem bloqueados durante o tratamento do sinal;
+	- sa_flags - Conjunto de flags que modificam o comportamento do sinal.
+-> struct sigaction *oact - (Se não for nulo) é utilizado para armazenar os detalhes definidos anteriormente.
+

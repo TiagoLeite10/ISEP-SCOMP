@@ -1,0 +1,2 @@
+11.
+Os sinais SIGKILL(9) e SIGSTOP(19) não podem ser bloqueados ou capturados por um processo. Estes sinais são sempre processados pelo kernel para que haja sempre uma forma de sair do programa/processo.

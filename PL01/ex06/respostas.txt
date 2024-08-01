@@ -1,0 +1,5 @@
+6)
+
+a) Este código irá criar mais 15 processos (processos filho) para além do processo principal (Processo Pai). Isto é justificado através da árvore de processos presente nesta pasta com o nome "Árvore de processos.jpg".
+
+b) Para que apenas 4 processos filhos sejam criados com este código, seria necessário colocar a instrução "break;" logo a seguir à instrução "sleep(1);", e ainda dentro do "if". Desta forma, apenas os processos filho iriam parar de realizar o ciclo "for" não criando assim processos filho do filho, e assim sucessivamente. Apenas o processo pai iria poder realizar a criação de processos, sendo que ele executa o código dentro do ciclo 4 vezes, criando assim 4 processos filho.

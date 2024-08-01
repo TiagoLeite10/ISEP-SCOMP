@@ -1,0 +1,3 @@
+9.
+a) O output não é imprimido de forma ordenada, pois existem múltiplos processos a correr em simultâneo.
+Caso esperássemos o fim de cada processo filho para iniciar o próximo era possível o output ser imprimido de forma ordenada.

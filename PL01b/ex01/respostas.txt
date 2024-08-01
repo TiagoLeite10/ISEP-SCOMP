@@ -1,0 +1,3 @@
+1.
+kill -l -> Lista todos os sinais possíveis de utilizar.
+man kill -> Manual para conhecer as opções e funcionalidades do comando kill.
